@@ -15,7 +15,7 @@ public class ApplicationContextConfig {
 
     @Bean
     // 开启 restTemplate 的负载均衡
-    @LoadBalanced
+//    @LoadBalanced
     public RestTemplate getRestTemplate()
     {
         return new RestTemplate();
