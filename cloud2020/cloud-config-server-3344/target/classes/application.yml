@@ -11,9 +11,6 @@ spring:
           #### 搜索目录
           search-paths:
             - springcloud-config
-          force-pull: true
-          username: 2196143404@qq.com
-          password: qwertyuiop11lm
       #### 读取分支
       label: main
 
