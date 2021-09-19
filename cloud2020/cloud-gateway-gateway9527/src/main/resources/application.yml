@@ -21,6 +21,12 @@ spring:
           uri: lb://CLOUD-PAYMENT-SERVICE # 匹配后提供服务的路由地址
           predicates:
             - Path=/payment/lb/**     # 断言，路径相匹配的进行路由
+            # - After=2021-09-19T17:43:21.871+08:00[Asia/Shanghai]
+            # - Cookie=username,lloam # 要求请求中含有指定 cookie
+            # - Header=X-Request-Id,\d+ # 请求头要有 X-Request-Id 属性并且值为整数的正则表达式
+            # - Host=**.com.mao         # 请求 Host 必须以 com.mao 为后缀 curl http://localhost:9527/payment/lb -H "Host:www.com.mao"
+            # - Method=GET              # 要求请求形式为 GET 请求
+            - Query=username,\d+        # 要求有参数名 username，并且值还是整数才能路由 curl http://localhost:9527/payment/lb?username=123
 eureka:
   instance:
     hostname: cloud-gateway-service
